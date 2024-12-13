@@ -16,10 +16,16 @@ spec:
     spec:
       containers:
         - name: flask-api
-          image: anndlh/flask-api:18481f307680958cb5e1b867dbadd0e61f3f1282
+          image: anndlh/flask-api:dcd1dff52457e70ee5b95aba9d1e3585ca76a5f5
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
+#          env:
+#            - name: MY_SECRET
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: my-secret
+#                   key: MY_SECRET
           resources:
             requests:
               cpu: 10m
