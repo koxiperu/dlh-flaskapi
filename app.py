@@ -15,7 +15,7 @@ def get_secret():
     secret = os.getenv("MY_SECRET")
     
     if not secret:
-        return jsonify({"error": "Secret key not found. Ensure the environment variable MY_SECRET_KEY is set."}), 500
+        return jsonify({"error": "Secret key not found. Ensure the environment variable MY_SECRET_KEY is set."}), 200
 
     return jsonify({"secret": secret}), 200
 
