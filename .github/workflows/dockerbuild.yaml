@@ -24,11 +24,11 @@ jobs:
 
       - name: Update Deployment manifest
         run: |
-          sed -i "s|image: dfernscap4/flask-api:.*|image: dfernscap4/flask-api:${{ github.sha }}|" deployment.yaml
+          sed -i "s|image: anndlh/flask-api:.*|image: anndlh/flask-api:${{ github.sha }}|" deployment.yaml
 
       - name: Commit and push changes
         run: |
-          git config user.name "Github actions"
+          git config user.name "GitHub actions"
           git config user.email "actions@github.com"
           git add deployment.yaml
           git commit -m "Update image tag to ${{github.sha}}"
