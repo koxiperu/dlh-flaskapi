@@ -18,6 +18,20 @@ jobs:
           password: ${{secrets.DOCKER_PASSWORD}}
       - name: Build and push image
         run: |
-          docker build -t flask-api:latest .
-          docker tag flask-api:latest anndlh/flask-api:latest
-          docker push anndlh/flask-api:latest
+          docker build -t flask-api:${{github.sha}} .
+          docker tag flask-api:${{github.sha}} anndlh/flask-api:${{github.sha}}
+          docker push anndlh/flask-api:${{github.sha}}
+
+      - name: Update Deployment manifest
+        run: |
+          sed -i "s|image: dfernscap4/flask-api:.*|image: dfernscap4/flask-api:${{ github.sha }}|" flask-api.yaml
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Github actions"
+          git config user.email "actions@github.com"
+          git add deployment.yaml
+          git commit -m "Update image tag to ${{github.sha}}"
+          git push
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
