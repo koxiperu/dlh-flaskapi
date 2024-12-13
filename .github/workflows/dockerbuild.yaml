@@ -24,7 +24,7 @@ jobs:
 
       - name: Update Deployment manifest
         run: |
-          sed -i "s|image: dfernscap4/flask-api:.*|image: dfernscap4/flask-api:${{ github.sha }}|" flask-api.yaml
+          sed -i "s|image: dfernscap4/flask-api:.*|image: dfernscap4/flask-api:${{ github.sha }}|" deployment.yaml
 
       - name: Commit and push changes
         run: |
