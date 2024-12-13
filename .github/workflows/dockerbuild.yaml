@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-and-push:
@@ -21,4 +24,3 @@ jobs:
           docker build -t flask-api:${{github.sha}}
           docker tag flask-api:${{github.sha}} anndlh/flask-api:${{gihub.sha}}
           docker push anndlh/flask-api:${{github.sha}}
-          
