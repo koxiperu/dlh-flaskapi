@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-api
-          image: anndlh/flask-api
+          image: anndlh/flask-api:latest
           ports:
           - containerPort: 5000
           resources:
