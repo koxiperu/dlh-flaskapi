@@ -20,12 +20,12 @@ spec:
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
-#          env:
-#            - name: MY_SECRET
-#               valueFrom:
-#                 secretKeyRef:
-#                   name: my-secret
-#                   key: MY_SECRET
+          env:
+            - name: MY_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: MY_SECRET
           resources:
             requests:
               cpu: 10m
