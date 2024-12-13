@@ -10,7 +10,7 @@ items = [
     {"id": 3, "name": "Item Three", "description": "This is item thtee"},
 ]
 
-@app.route('/', methods=['GET'])
+@app.route('/secret', methods=['GET'])
 def get_secret():
     secret = os.getenv("MY_SECRET")
     
