@@ -10,7 +10,8 @@ items = [
     {"id": 3, "name": "Item Three", "description": "This is item three"},
     {"id": 4, "name": "Item Four", "description": "This is item four"},
     {"id": 5, "name": "Item 55555", "description": "This is item 55555"},
-    {"id": 6, "name": "Item 666666", "description": "This is item 666666"}
+    {"id": 6, "name": "Item 666666", "description": "This is item 666666"},
+    {"id": 7, "name": "Item 7777777777", "description": "This is item 7777777"},
 
 ]
 
