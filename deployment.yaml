@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-api
-          image: anndlh/flask-api:latest
+          image: anndlh/flask-api:e5dcf607f63402d34efcbdfdae0ca024a852daba
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
