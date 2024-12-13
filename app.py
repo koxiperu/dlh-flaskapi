@@ -9,6 +9,15 @@ items = [
     {"id": 3, "name": "Item Three", "description": "This is item thtee"},
 ]
 
+@app.route('/', methods=['GET'])
+def get_secret():
+    secret = os.getenv("MY_SECRET")
+    
+    if not secret:
+        return jsonify({"error": "Secret key not found. Ensure the environment variable MY_SECRET_KEY is set."}), 500
+
+    return jsonify({"secret": secret}), 200
+
 # Get all items
 @app.route('/items', methods=['GET'])
 def get_items():
