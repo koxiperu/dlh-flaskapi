@@ -19,5 +19,5 @@ jobs:
       - name: Build and push image
         run: |
           docker build -t flask-api:latest .
-          docker tag flask-api:${{github.sha}} anndlh/flask-api:latest
+          docker tag flask-api:latest anndlh/flask-api:latest
           docker push anndlh/flask-api:latest
